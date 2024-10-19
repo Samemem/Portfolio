@@ -4,354 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sam's Portfolio</title>
-  <link rel="stylesheet" href="./resources/css/index.css">
+  <link rel="stylesheet" href="./style.css">
   <script src="https://kit.fontawesome.com/4540c5b697.js" crossorigin="anonymous"></script>
-  
-  <style>
-/* Basic reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-/* Navbar styling */
-.navbar {
-  background-color: #333;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: center; /* Center all navbar items */
-  align-items: center;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar ul li {
-  display: inline-block;
-  margin: 0 20px;
-  position: relative;
-}
-
-.navbar ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 5px 10px;
-  transition: all 0.3s ease-in-out;
-  position: relative; /* Required for the hover effect */
-}
-
-/* Hover effect: Purple underline only on hovered item */
-.navbar ul li a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: blueviolet;
-  transition: width 0.3s ease-in-out;
-  bottom: -2px;
-  left: 0;
-}
-
-.navbar ul li a:hover::after {
-  width: 100%; /* Expand underline on hover */
-}
-
-
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
-
-/* First section full-screen height */
-.titlesection {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh; /* Full-screen height */
-  padding: 0 10%; /* Add padding to left and right */
-  position: relative; /* Needed for button positioning */
-}
-
-.title_header {
-  font-size: 3rem;
-  color: rgb(155, 69, 235);
-}
-
-.title_text {
-  margin-top: 10px;
-  color: #555;
-  font-size: 1.2rem;
-}
-
-.title_item img {
-  width: 400px;
-  border-radius: 30%;
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-
-/* Adding blurred sides using pseudo-elements on the image */
-.title_item img::before,
-.title_item img::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  width: 30px; /* Width of the blur effect */
-  background: rgba(0, 0, 0, 0.2); /* You can adjust the color and transparency */
-  filter: blur(15px); /* The blur intensity */
-  z-index: 0;
-}
-
-.title_item img::before {
-  left: -20px; /* Adjust position for the left blur */
-}
-
-.title_item img::after {
-  right: -20px; /* Adjust position for the right blur */
-}
-
-/* "See More" button styling */
-#see-more-btn {
-  position: absolute;
-  bottom: 80px; /* Move the button higher */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgb(155, 69, 235);
-  color: #fff;
-  padding: 12px 24px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
-}
-
-#see-more-btn:hover {
-  background-color: #464646; /* Lighter purple on hover */
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
-  color: #f4f4f4; /* Slightly lighter text color */
-}
-
-/* Padding between sections */
-section {
-  padding: 80px 5%; /* Add space between each section and from the sides */
-}
-
-#skills, #projects, #contact, #about, #education, .hidden {
-  padding: 50px 10%;
-}
-
-/* Timeline Container */
-.timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 40px auto;
-}
-
-/* Each timeline item */
-.timeline-item {
-  padding: 10px 40px;
-  position: relative;
-  width: 50%;
-}
-
-/* Left-aligned timeline items */
-.timeline-item.left {
-  left: 0;
-  text-align: right;
-}
-
-/* Right-aligned timeline items */
-.timeline-item.right {
-  left: 50%;
-  text-align: left;
-}
-
-/* Timeline content */
-.timeline-content {
-  background-color: white;
-  padding: 15px;
-  border-radius: 6px;
-  position: relative;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.timeline-item.left .timeline-content {
-  transform: translateX(-30px);
-}
-
-.timeline-item.right .timeline-content {
-  transform: translateX(30px);
-}
-
-/* Circles for the timeline */
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 4px;
-  height: 100%;
-  background: #333;
-  transform: translateX(-50%);
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  top: 15px;
-  width: 25px;
-  height: 25px;
-  background-color: #333;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.timeline-item.left::before {
-  right: -40px;
-}
-
-.timeline-item.right::before {
-  left: -40px;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-  .timeline-item {
-    width: 100%;
-  }
-
-  .timeline-item.left .timeline-content,
-  .timeline-item.right .timeline-content {
-    transform: none;
-  }
-
-  .timeline-item.left::before,
-  .timeline-item.right::before {
-    right: auto;
-    left: 50%;
-  }
-
-  .timeline::before {
-    left: 50%;
-  }
-}
-
-h1 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: #444;
-}
-
-h2 {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-p {
-  font-size: 1rem;
-  color: #666;
-  margin-top: 10px;
-}
-
-/* Ensure all project cards have the same height */
-.grid-item {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 300px;
-}
-
-.grid-item-skills {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.grid-item:hover {
-  transform: translateY(-10px);
-  cursor: pointer;
-}
-
-/* Flexbox layout for skills and projects */
-.grid-container-skills, .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding-top : 1rem;
-}
-
-
-.hidden{
-  display:none;
-}
-
-/* Footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 50px;
-}
-
-footer p {
-  margin-bottom: 10px;
-}
-
-footer a {
-  color: rgb(148, 55, 234);
-  text-decoration: none;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .titlesection {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .main {
-    padding: 20px;
-  }
-
-  #see-more-btn {
-    bottom: 20px;
-  }
-}
-
-    
-  </style>
 </head>
 
 <body>
@@ -366,10 +20,10 @@ footer a {
   </nav>
 
   <!-- Titlesection -->
-  <div class="titlesection">
+  <div class="titlesection" id="home">
     <div class="title_item">
-      <h1 class="title_header">Welcome to <span style="color:rgb(155, 69, 235)">My Portfolio</span></h1>
-      <p class="title_text">Hi, I'm Sam! I'm passionate about data science, climate modeling, and environmental issues. Explore my projects and learn more about my skills below.</p>
+      <h1 class="title_header">Welcome to My Portfolio!</span></h1>
+      <p class="title_text">Hello, I'm Sam. I'm passionate about data science, climate modeling, and environmental issues. Explore my projects and learn more about my skills below.</p>
     </div>
     <div class="title_item" id="home_picture">
       <img src="resources\images\sat_rose_photo1.jpeg" alt="Profile Picture">
@@ -381,22 +35,26 @@ footer a {
 
     <div id="about">
       <h1 >Who I Am</h1>
-      <p>My name is Sam. I'm a data science student, specialized in remote sensing, 
-        climate modelling, and tackling environmental issues such as global warming 
-        and climate risks.</p>
+      <p> I'm a data science student, specialized in remote sensing, 
+        climate modelling and interested in environmental issues such as tackling 
+        global warming, adaptation to climate risks and protecting the biosphere. </p>
 
       <div class="grid-container-skills">
         <div class="grid-item-skills">
           <h2><span class="fa-solid fa-code"></span> Coding</h2>
-          <p>Proficient in Python for data science, working with libraries such as Pandas, matplotlib, seaborn, and numpy. Experienced with C, R, and Matlab.</p>
+          <p>Proficient in Python for data science, working with libraries such as pandas, 
+            matplotlib, seaborn, numpy, pyspark. 
+            Experienced with other popular languages.</p>
         </div>
         <div class="grid-item-skills">
           <h2><span class="fa-solid fa-satellite"></span> Geoanalytics</h2>
-          <p>Skilled in geospatial data analysis using QGIS, Keplergl, Geopandas, rasterio, and folium.</p>
+          <p>Specialized in geospatial data analysis using QGIS, kepler.gl, geopandas, 
+            rasterio, folium and open street map.</p>
         </div>
         <div class="grid-item-skills">
           <h2><span class="fa-solid fa-pencil"></span> Creativity</h2>
-          <p>I enjoy creating appealing visuals through data visualization, PowerPoint presentations, and web design.</p>
+          <p>I enjoy creating appealing visuals through data visualization, 
+            PowerPoint presentations and even for this website.</p>
         </div>
       </div>
     </div>
@@ -408,21 +66,25 @@ footer a {
         <div class="timeline-item left">
           <div class="timeline-content">
             <h2>IMT Atlantique - Engineering studies(2021 - 2025)</h2>
-            <p>I studied Remote Sensing and Data Science, where I gained a deep understanding of climate modeling, data analysis, and environmental issues.</p>
+            <p>I studied remote sensing and data science, where I gained a deep understanding 
+              of climate modeling and monitoring, data analysis and environmental issues.</p>
           </div>
         </div>
         <!-- Timeline Item 2 -->
         <div class="timeline-item right">
           <div class="timeline-content">
             <h2>Universidad Carlos III - Data Science and Aerospace Engineering  (2023)</h2>
-            <p>I took introductory lectures in machine and learning, as well as modeling.</p>
+            <p>I took introductory lectures in machine and deep learning, modeling 
+              and discovered aerospace engineering.</p>
           </div>
         </div>
         <!-- Timeline Item 3 -->
         <div class="timeline-item left">
           <div class="timeline-content">
             <h2>ONERA - SAR Image Database internship (2023)</h2>
-            <p>Automation of Synthetic Aperture Radar images labeling using geoanalytics</p>
+            <p>Automation of Synthetic Aperture Radar images labeling using geoanalytics
+              and numerical image processing techniques.
+            </p>
           </div>
         </div>
         <!-- Timeline Item 4 -->
@@ -437,7 +99,8 @@ footer a {
         <div class="timeline-item left">
           <div class="timeline-content">
             <h2>Milliman - Climate Modeling Internship (2024)</h2>
-            <p>Worked on methods to accurately assess portfolio loss caused by floods.</p>
+            <p>Worked on methods to accurately assess portfolio loss caused by floods
+              and improve the hazard modeling with open data.</p>
           </div>
         </div>
       </div>
@@ -496,6 +159,7 @@ footer a {
     </div>
     <div class = "hidden" id = "hidden2">
       <h2>Bird Detection App</h2>
+      <img src="./resources/images/cygnes.jpg" >
       <p>
         In a group project at IMT Atlantique, we gathered detection and classification algorithms
         with a user-frindely interface to help ornithologists count birds in Lorient harbor. The 
@@ -504,6 +168,7 @@ footer a {
     </div>
     <div class = "hidden" id = "hidden3">
       <h2>Pacman AI</h2>
+      <img src="./resources/images/pacman.png" >
       <p>During my studies in Madrid, I worked on a project by groups of 2 to develop an Artificial
         Intelligence for Pacman in Python. In a slight modified version of the game, we applied 
         techniques of classification and reinforcement learning to obtain the  best score. We 
@@ -512,6 +177,7 @@ footer a {
     </div>
     <div class = "hidden" id = "hidden4">
       <h2>Antenna Control System</h2>
+      <img src="./resources/images/antenne.png" >
       <p> With 2 other IMT Atlantique students, we prototyped a system to control an antenna, so that
         it would automatically point towards the direction of a probe balloon. We used electronics, 
         mechanics and control theories.
@@ -519,6 +185,7 @@ footer a {
     </div>
     <div class = "hidden" id = "hidden5">
       <h2>Autonomous Arduino Car</h2>
+      <img src="./resources/images/fpa_voiture1.jpg" >
       <p>
         From assembling the robot to calibrating the obstacle detection, we went through all the steps of 
         the development of the miniature self driving car. We could either control it remotely, or let it
@@ -527,6 +194,7 @@ footer a {
     </div>
     <div class = "hidden" id = "hidden6">
       <h2>PyRat Challenge</h2>
+      <img src="resources/images/pyrat.jpg" >
      <p>This project consisted in developing an artificial intelligence to maximize the score
       of a game developed specifically for this project. In this game, a rat goes through a maze 
       and tries to eat as much cheese as possible within a defined duration. The agent was
@@ -536,6 +204,7 @@ footer a {
     </div>
     <div class = "hidden" id = "hidden7">
       <h2>Offshore windfarms and vessel traffic</h2>
+      <img src="./resources/images/ais_heatmap.jpg" alt="Project 1">
       <p>We worked for a company to estimate the influence of offshore wind farms on
         vessel traffic, especially pleasure crafts. The study was possible thanks to Automatic 
         Identification System data gathered since 2016 which was analyzed in parallel with 
@@ -544,6 +213,7 @@ footer a {
     </div>
     <div class = "hidden" id = "hidden8">
       <h2>Data science project</h2>
+      <!-- <img src="" alt="Project 1"> -->
       <p>We are currently choosing the topic. At the moment we plan on establishing
         the influence of climate change on birds diversity and migration.
       </p>

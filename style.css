@@ -1,0 +1,344 @@
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+/* Navbar styling */
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Center all navbar items */
+    align-items: center;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar ul li {
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+  }
+  
+  .navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out;
+    position: relative; /* Required for the hover effect */
+  }
+  
+  /* Hover effect: Purple underline only on hovered item */
+  .navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: rgb(155, 70, 234);
+    transition: width 0.3s ease-in-out;
+    bottom: -2px;
+    left: 0;
+  }
+  
+  .navbar ul li a:hover::after {
+    width: 100%; /* Expand underline on hover */
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* First section full-screen height */
+  .titlesection {
+    display: flex;
+    justify-content: space-between; /* Keep the items spaced out */
+    align-items: center;
+    height: 100vh; /* Full-screen height */
+    padding: 0 10%; /* Add padding to left and right */
+    position: relative; /* Needed for button positioning */
+  }
+  
+  .title_header {
+    font-size: 3rem;
+    color: rgb(155, 70, 234);
+    margin-bottom: 10px; /* Adjusted space below title header */
+  }
+  
+  .title_text {
+    margin-top: 10px;
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Updated margin for the image */
+  .title_item img {
+    width: 400px;
+    border-radius: 30%;
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin-left: 20px; /* Add space between the image and text */
+  }
+  
+  /* "See More" button styling */
+  #see-more-btn {
+    position: absolute;
+    bottom: 80px; /* Move the button higher */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(155, 70, 234);
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+  }
+  
+/* Hover effect for the button */
+#see-more-btn:hover {
+  background-color: #333; /* Change background color on hover */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow */
+}
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .titlesection {
+      flex-direction: column; /* Change to column layout on smaller screens */
+      align-items: center; /* Center align all items */
+      padding-top: 80px; /* Adjust padding to avoid navbar overlap */
+    }
+  
+    .title_item img {
+      width: 300px; /* Reduce image size on smaller screens */
+      margin-left: 0; /* Remove left margin to center the image below the text */
+      margin-top: 20px; /* Add margin above the image */
+    }
+  
+    #see-more-btn {
+        position: relative; /* Change to relative positioning */
+        bottom: auto; /* Remove fixed position adjustments */
+        margin-top: 20px; /* Add space above the button */
+      }
+  }
+    
+
+  /* Padding between sections */
+  section {
+    padding: 80px 5%; /* Add space between each section and from the sides */
+  }
+  
+  #skills, #projects, #contact, #about, #education, .hidden {
+    padding: 50px 10%;
+  }
+  
+/* Timeline Container */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  /* Vertical line in the center */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: #333;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+  
+  /* Each timeline item */
+  .timeline-item {
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+  }
+  
+  /* Smaller hexagons for the timeline */
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 25px; 
+    height: 25px; 
+    background-color: #333;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  /* Timeline content */
+  .timeline-content {
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 45%;
+    z-index: 1;
+  }
+  
+  /* Align timeline content to the left and right of the line */
+  .timeline-item.left .timeline-content {
+    float: left;
+    transform: translateX(-10%);
+  }
+  
+  .timeline-item.right .timeline-content {
+    float: right;
+    transform: translateX(10%);
+  }
+  
+  /* Clear floats after each timeline item */
+  .timeline-item::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .timeline-content {
+      width: 90%;
+      float: none;
+      margin: 0 auto;
+      transform: none;
+    }
+  
+    .timeline::before {
+      left: 50%;
+    }
+  
+    .timeline-item::before {
+      left: 50%;
+    }
+  }
+    
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #444;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #1a1a1a;
+    margin-top: 10px;
+  }
+  
+  /* Ensure all project cards have the same height */
+  .grid-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+  }
+  
+  .grid-item-skills {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .grid-item:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+  
+  /* Flexbox layout for skills and projects */
+  .grid-container-skills, .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding-top : 1rem;
+  }
+  
+  
+  .hidden{
+    display:none;
+  }
+  
+/* Center and style the images in the sections */
+.hidden img {
+  display: block;
+  margin: 20px auto; /* Center the image with auto margins */
+  padding: 10px; /* Add some padding around the image */
+  max-width: 100%; /* Ensure images fit within the screen width */
+  height: auto; /* Maintain the aspect ratio */
+  max-height: 400px; /* Set a maximum height to prevent very tall images */
+  max-width: 600px; /* Set a maximum width to prevent large images from taking too much space */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .hidden img {
+    max-width: 90%; /* Ensure images aren't too large on smaller screens */
+    max-height: 300px; /* Reduce the maximum height for smaller screens */
+  }
+}
+
+
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+  }
+  
+  footer p {
+    margin-bottom: 10px;
+  }
+  
+  footer a {
+    color: rgb(148, 55, 234);
+    text-decoration: none;
+  }
+  
