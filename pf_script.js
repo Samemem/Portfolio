@@ -2,7 +2,7 @@ let buttons = [];
 let hiddenDivs = [];
 
 // Loop through and assign all buttons and hidden divs to the arrays
-for (let i = 1; i <= 8; i++) {
+for (let i = 1; i <= 15; i++) {
   buttons[i] = document.getElementById(`clickdiv${i}`);
   hiddenDivs[i] = document.getElementById(`hidden${i}`);
 }

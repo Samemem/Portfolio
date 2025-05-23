@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sam's Portfolio</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/jpeg" href="./resources/images/icon_sat1_crop.jpeg">
   <script src="https://kit.fontawesome.com/4540c5b697.js" crossorigin="anonymous"></script>
 </head>
 
@@ -13,7 +14,8 @@
   <nav class="navbar">
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#journey">Journey</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -23,49 +25,85 @@
   <div class="titlesection" id="home">
     <div class="title_item">
       <h1 class="title_header">Welcome to My Portfolio!</span></h1>
-      <p class="title_text">Hello, I'm Sam. I'm passionate about data science, climate modeling, and environmental issues. Explore my projects and learn more about my skills below.</p>
+      <p class="title_text">Hello, I'm Sam. I'm passionate about data science, 
+        climate modeling, and environmental issues. Explore my projects and 
+        learn more about my skills below.</p>
     </div>
     <div class="title_item" id="home_picture">
-      <img src="resources\images\sat_rose_photo1.jpeg" alt="Profile Picture">
+      <img src="resources/images/sat_rose_photo1.jpeg" alt="Profile Picture">
     </div>
 
     <!-- "See More" Button -->
-    <button id="see-more-btn" onclick="document.getElementById('about').scrollIntoView()">See More</button>
+    <button id="see-more-btn" onclick="document.getElementById('skills').scrollIntoView()">See More</button>
   </div>
 
-    <div id="about">
+    <div id="skills">
       <h1 >Who I Am</h1>
       <p> I'm a data science student, specialized in remote sensing, 
         climate modelling and interested in environmental issues such as tackling 
-        global warming, adaptation to climate risks and protecting the biosphere. </p>
+        global warming, adaptation to climate risks and protecting the biosphere.
+      </p>
 
       <div class="grid-container-skills">
         <div class="grid-item-skills">
           <h2><span class="fa-solid fa-code"></span> Coding</h2>
           <p>Proficient in Python for data science, working with libraries such as pandas, 
             matplotlib, seaborn, numpy, pyspark. 
-            Experienced with other popular languages.</p>
+            Familiar with other popular languages and experienced with Git.</p>
         </div>
         <div class="grid-item-skills">
           <h2><span class="fa-solid fa-satellite"></span> Geoanalytics</h2>
-          <p>Specialized in geospatial data analysis using QGIS, kepler.gl, geopandas, 
-            rasterio, folium and open street map.</p>
+          <p>Specialized in geospatial data analysis using QGIS, mastering both raster and 
+            vector data. Able to process them through Python and the associated libraries.</p>
         </div>
         <div class="grid-item-skills">
           <h2><span class="fa-solid fa-pencil"></span> Creativity</h2>
-          <p>I enjoy creating appealing visuals through data visualization, 
-            PowerPoint presentations and even for this website.</p>
+          <p>I enjoy creating appealing visuals through data visualization like graphs and maps, 
+            dashboards, PowerPoint presentations and even for this website.</p>
         </div>
+        <div class="grid-item-skills">
+          <h2><span class="fa-solid fa-briefcase"></span> Business Understanding</h2>
+          <p>Using state-of-the-art machine learning techniques is useless if you don't
+            identify the real problem, that's why I always make sure to determine it.
+          </p>
+        </div>
+        <div class="grid-item-skills">
+          <h2><span class="fa-solid fa-robot"></span> Machine Learning</h2>
+          <p>Deep understanding of the best machine learning models and methods.
+            Able to efficiently implement them in Python with libraries like Scikit-Learn and PyTorch.
+          </p>
+        </div> 
+        <div class="grid-item-skills">
+          <h2><span class="fa-solid fa-square-root-variable"></span> Mathematics</h2>
+          <p>Coming from a demanding scientific education, I master statistics, probability and
+             linear algebra, which are crucial in my expertise fields.
+          </p>
+        </div>   
+        <div class="grid-item-skills">
+          <h2><span class="fa-solid fa-earth-europe"></span> Physics and Modelling</h2>
+          <p>I appreciate modelling all kind of physical phenomenas. In my case they are related to
+             the environment and its observation like climatology and telecommunications.
+          </p>
+        </div>  
+        <div class="grid-item-skills">
+          <h2><span class="fa-solid fa-list-check"></span> Project Management</h2>
+          <p>Through all my projects and experiences, I learnt the methods and tools
+            that secure a good work, made in time with a team of diverse profiles.
+          </p>
+        </div>           
       </div>
     </div>
 
-    <div id="education">
+    <div id="journey">
       <h1>Education & Experiences</h1>
+      After 2 years in preparatory classes, I entered IMT Atlantique, a top French engineering school.
+      Before my last year of studies, I went in a gap year to do internships.
+      I'm currently doing my final internship at Hygeos before graduating.
       <div class="timeline">
         <!-- Timeline Item 1 -->
         <div class="timeline-item left">
           <div class="timeline-content">
-            <h2>IMT Atlantique - Engineering studies(2021 - 2025)</h2>
+            <h2>IMT Atlantique - Engineering studies (2021 - 2025)</h2>
             <p>I studied remote sensing and data science, where I gained a deep understanding 
               of climate modeling and monitoring, data analysis and environmental issues.</p>
           </div>
@@ -73,8 +111,8 @@
         <!-- Timeline Item 2 -->
         <div class="timeline-item right">
           <div class="timeline-content">
-            <h2>Universidad Carlos III - Data Science and Aerospace Engineering  (2023)</h2>
-            <p>I took introductory lectures in machine and deep learning, modeling 
+            <h2>Universidad Carlos III - Data Science and Aerospace Engineering (2023)</h2>
+            <p>I took lectures in machine and deep learning, modeling 
               and discovered aerospace engineering.</p>
           </div>
         </div>
@@ -103,6 +141,14 @@
               and improve the hazard modeling with open data.</p>
           </div>
         </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h2>Hygeos - Machine Learning for Meteorology Internship (2025)</h2>
+            <p>Implementing state of the art deep learning model for cloud nowcasting
+              using satellite imagery.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -112,6 +158,8 @@
     <!-- Projects Section -->
     <div id="projects">
       <h1>Projects</h1>
+      Here you can see in details all the projects I realised during my studies and my personal time.
+
       <div class="grid-container">
         <div class="grid-item" id="clickdiv1">
           <h2>Website Development</h2>
@@ -123,7 +171,7 @@
         </div>
         <div class="grid-item" id="clickdiv3">
           <h2>Pacman AI</h2>
-          <p>Developed an AI to beat the Pacman game using optimization techniques.</p>
+          <p>Developed an AI to beat the Pacman game.</p>
         </div>
         <div class="grid-item" id="clickdiv4">
           <h2>Antenna Control System</h2>
@@ -139,12 +187,36 @@
         </div>
         <div class="grid-item" id="clickdiv7">
           <h2>Offshore windfarms and vessel traffic</h2>
-          <p>We used machine learning techniques to predict how wind farms impact ship trajectories. </p>
+          <p>Thorough data analysis to assess how wind farms impact ship trajectories.</p>
         </div>
         <div class="grid-item" id="clickdiv8">
-          <h2>Data science project</h2>
-          <p>This  year, we are working on a topic we chose, along with the dataset.</p>
+          <h2>Atmospheric pollutions and birds</h2>
+          <p>Studied the impact of air pollution on avifauna in the US.</p>
         </div>
+        <div class="grid-item" id="clickdiv9">
+          <h2>SQL Database</h2>
+          <p>Developed an efficient architecture for a fictional database using PostGreSQL</p>
+        </div>
+        <div class="grid-item" id="clickdiv10">
+          <h2>BI for teleradiology</h2>
+          <p>From raw data to insightful dashboards, meaningful visuals to help healthcare.</p>
+        </div>
+        <div class="grid-item" id="clickdiv11">
+          <h2>Video Game outcome prediction</h2>
+          <p>Find out here how we managed to predict League of Legends game winner.</p>
+        </div>
+        <div class="grid-item" id="clickdiv12">
+          <h2>Hackathons</h2>
+          <p>Particpated in Hackathons oragnized by Ekimetrics and Météo France</p>
+        </div>
+        <div class="grid-item" id="clickdiv13">
+          <h2>Detect AI generated text</h2>
+          <p>Kaggle challenge to discrimiante AI generated text from student essays</p>
+        </div>
+        <div class="grid-item" id="clickdiv14">
+          <h2>Modelling Plastic Continent</h2>
+          <p>Oceanography and numerical methods applied to model plastic pollution.</p>
+        </div>        
       </div>
     </div>
 
@@ -153,9 +225,10 @@
       <h2>Website Development</h2>
       <p>I wanted to showcase my projects and this portfolio gives me the opportunity to chose how
           to do it. I learnt HTML and CSS basics to create the website from scratch. However,
-          I realised that making it responsive was hard, and I wanted to push the visuals a step further.
-          This led me to us Chat GPT for specific needs, which I found really useful.
+          I realised that making it responsive was time consuming, and I wanted to push the visuals a step further.
+          This led me to use Chat GPT for specific needs, which I found really useful.
       </p>
+    </div>
     </div>
     <div class = "hidden" id = "hidden2">
       <h2>Bird Detection App</h2>
@@ -164,6 +237,8 @@
         In a group project at IMT Atlantique, we gathered detection and classification algorithms
         with a user-frindely interface to help ornithologists count birds in Lorient harbor. The 
         image recognition system used Tensor-flow and the interface was coded in Java.
+        At the end of the work, we delivered to the client a complete and powerful tool that participates 
+        in the avifauna wellbeing.
       </p>
     </div>
     <div class = "hidden" id = "hidden3">
@@ -181,6 +256,7 @@
       <p> With 2 other IMT Atlantique students, we prototyped a system to control an antenna, so that
         it would automatically point towards the direction of a probe balloon. We used electronics, 
         mechanics and control theories.
+        This would later be used to ensure an efficient communication with a nanosatellite.
       </p>
     </div>
     <div class = "hidden" id = "hidden5">
@@ -204,32 +280,97 @@
     </div>
     <div class = "hidden" id = "hidden7">
       <h2>Offshore windfarms and vessel traffic</h2>
-      <img src="./resources/images/ais_heatmap.jpg" alt="Project 1">
-      <p>We worked for a company to estimate the influence of offshore wind farms on
+      <img src="./resources/images/ais_heatmap.jpg">
+      <p>We worked for a public company to estimate the influence of offshore wind farms on
         vessel traffic, especially pleasure crafts. The study was possible thanks to Automatic 
         Identification System data gathered since 2016 which was analyzed in parallel with 
-        wind farms construction zones.
+        wind farms construction zones.<br/>
+        To meet the clients need, we applied geospatial analysis techniques to a huge volume of data
+        with Python, and visualized it with the GIS open source tool QGIS.
+        After a thorough data anlysis to unbias the data, we observed that the trafic decreased of 60% 
+        in the windfarm areas, and 10% 10 km away from the farms.
       </p>
     </div>
     <div class = "hidden" id = "hidden8">
-      <h2>Data science project</h2>
-      <!-- <img src="" alt="Project 1"> -->
-      <p>We are currently choosing the topic. At the moment we plan on establishing
-        the influence of climate change on birds diversity and migration.
+      <h2>Atmospheric pollution and birds</h2>
+      <img src="./resources/images/birds_predict1.jpg">
+      <p>We analyzed data of birds observations and air quality to establish the impact of atmospheric pollution on the avifauna.
+        The bird observations had to be converted into abundance, which reflects more the actual distribution of birds. <br/>
+        Then we trained several time series algorithms like ARIMA, Linear regression, Random Forest and XGBoost with air quality indicators as 
+        input varibales to predicts birds abundance across several counties in the US. We thus managed to show that some species might come instinct if measures weren't taken against 
+        air pollution.
+      </p>
+    </div>
+    <div class = "hidden" id = "hidden9">
+      <h2>SQL Database</h2>
+      <img src="resources/images/schema_conceptuel.jpg">
+      <p>After creating an efficient architecture for a fictional social media, we implemented it with PostGreSQL in python.
+        This work was made while applying normalization techniques to avoid redundancy and inconsistent dependencies.
+      </p>
+    </div>
+    <div class = "hidden" id = "hidden10">
+      <h2>BI for teleradiology</h2>
+      <img src="./resources/images/bi_page3_flou.jpg">
+      <p>In this project we applied the agile method to meet client's need to optimize the teleradiology staff management. <br/>
+        First we used a star schema to represent the architecture of the data. After that we created an ETL 
+        (Extract, Transform and Load) process using the EasyFlow software.<br/>
+        Finally the data was used in PowerBI to create appealing and insightful interactive dashboards to help decision making.
+      </p>
+    </div>
+    <div class = "hidden" id = "hidden11">
+      <h2>Video Game Outcome Prediction</h2>
+      <img src="./resources/images/lol_map1.png" alt="Project 1">
+      <p>League of Legends is a very famous yet complex game. 2 teams of 5 players fight each other to destroy the opponent
+        "Nexus", the cristal core of a team base. With more than a hundred playable characters and parties averaging 
+        30 minutes, one might think that the game outcome is completely unpredictable. However, we managed to accurately determine 
+        in advance which team would win based on basic data. <br/>
+        We implemented a complete machine learning pipeline with Pyspark (educational purpose, no cluster) for logisitic regression,
+        Random Forest and SVM to obtain a final F1 score of more than 0.8, and 0.9 when running a grid-search coupled with 
+        cross-validation.
+      </p>
+    </div>
+    <div class = "hidden" id = "hidden12">
+      <h2>Hackathons</h2>
+      <img src="resources/images/hackathon.jpg">
+      <p>I had the occasion to participate in 2 Hackathons, one organized by Meteo France for the release of their open data.
+        The other was organized by Ekimetrics, a consulting firm expert in data driven solutions.
+        These intensive challenges were a great opportunity to develop innovative solutions in a short timespan.
+      </p>
+    </div>
+    <div class = "hidden" id = "hidden13">
+      <h2>Detect AI Generated Text</h2>
+      <img src="resources/images/pexels-thepaintedsquare-606541.jpg"
+      <p>In a context of exponential growth of AI generated text, it becomes crucial to distinguish them from texts written by humans.
+        Thus, we participated in a challenge where the goal was to correctly classify essays in a corpus with several LLMs and students. <br/>
+        We used a dataset composed of thousands of essays that was used as input to several architectures. <br/>
+        The first one made use of TF-IDF (Term Frequency-Inverse Document Frequency). It's a simple but powerful
+        text method to determine the semantic importance of each word in a document based on its frequency in 
+        the given text, relatively to its frequency in the whole corpus. This enabled us to get 
+        features for the words that are then fed to a ML classification algorithm, to finally obtain a solid f1 score
+        greater than 0,7. <br/>
+        The other methods were based on deep neural networks. One was a LSTM, and the other used
+        the BERT LLM to make an embedding of the words that would be similarly to TF-IDF given to 
+        ML classification algorithm.   
+
+
       </p>
     </div>
 
+
+
     <!-- Contact Section -->
     <div id="contact">
-      <h1>Contact Me</h1>
+      <h1>Contact Me and Look at More Stuff!</h1>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/sgsln7/">My profile</a></p>
       <p>Email: <a href="mailto:ghyselen.sam@gmail.com">ghyselen.sam@gmail.com</a></p>
+      <!-- <p>Kaggle: <a href=""></a></p> -->
+      <p>GitHub: <a href="https://github.com/Samemem">My profile</a></p>
     </div>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Sam's Portfolio</p>
+    <p>&copy; 2025 Sam's Portfolio</p>
   </footer>
   <script src="./pf_script.js"></script>
   

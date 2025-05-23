@@ -55,7 +55,7 @@
     position: absolute;
     width: 0;
     height: 2px;
-    background: rgb(155, 70, 234);
+    background: rgb(126, 78, 222);
     transition: width 0.3s ease-in-out;
     bottom: -2px;
     left: 0;
@@ -82,7 +82,7 @@
   
   .title_header {
     font-size: 3rem;
-    color: rgb(155, 70, 234);
+    color: rgb(126, 78, 222);
     margin-bottom: 10px; /* Adjusted space below title header */
   }
   
@@ -109,7 +109,7 @@
     bottom: 80px; /* Move the button higher */
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgb(155, 70, 234);
+    background-color: rgb(126, 78, 222);
     color: #fff;
     padding: 12px 24px;
     font-size: 1rem;
@@ -152,14 +152,14 @@
     padding: 80px 5%; /* Add space between each section and from the sides */
   }
   
-  #skills, #projects, #contact, #about, #education, .hidden {
+  #skills, #projects, #contact, #about, #journey, .hidden {
     padding: 50px 10%;
   }
   
 /* Timeline Container */
 .timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
   }
@@ -184,7 +184,7 @@
     width: 100%;
   }
   
-  /* Smaller hexagons for the timeline */
+  /*hexagons for the timeline */
   .timeline-item::before {
     content: '';
     position: absolute;
@@ -212,12 +212,12 @@
   /* Align timeline content to the left and right of the line */
   .timeline-item.left .timeline-content {
     float: left;
-    transform: translateX(-10%);
+    transform: translateX(-5%);
   }
   
   .timeline-item.right .timeline-content {
     float: right;
-    transform: translateX(10%);
+    transform: translateX(5%);
   }
   
   /* Clear floats after each timeline item */
@@ -249,7 +249,7 @@
   h1 {
     margin-bottom: 20px;
     font-size: 2rem;
-    color: #444;
+    color: rgb(126, 78, 222)
   }
   
   h2 {
@@ -273,7 +273,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 300px;
+    height: 200px;
   }
   
   .grid-item-skills {
@@ -292,13 +292,32 @@
   }
   
   /* Flexbox layout for skills and projects */
-  .grid-container-skills, .grid-container {
+  /* .grid-container-skills, .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding-top : 1rem;
+  } */
+
+  /* Flexbox layout for skills and projects */
+  .grid-container-skills, .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Max 4 items per line */
+    gap: 20px;
+    padding-top: 1rem;
   }
-  
+
+  @media (max-width: 1200px) {
+  .grid-container-skills, .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid-container-skills, .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
   
   .hidden{
     display:none;
