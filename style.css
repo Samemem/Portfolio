@@ -70,7 +70,7 @@
     scroll-behavior: smooth;
   }
   
-  /* First section full-screen height */
+  /* First section */
   .titlesection {
     display: flex;
     justify-content: space-between; /* Keep the items spaced out */
@@ -83,11 +83,11 @@
   .title_header {
     font-size: 3rem;
     color: rgb(126, 78, 222);
-    margin-bottom: 10px; /* Adjusted space below title header */
+    /* margin-bottom: 10px; /* Adjusted space below title header */
   }
   
   .title_text {
-    margin-top: 10px;
+    /* margin-top: 10px; */
     color: #1a1a1a;
     font-size: 1.2rem;
     text-align: left; /* Align text to the left */
@@ -95,18 +95,18 @@
   
   /* Updated margin for the image */
   .title_item img {
-    width: 400px;
+    width: 500px;
     border-radius: 30%;
     display: block;
     position: relative;
     z-index: 1;
-    margin-left: 20px; /* Add space between the image and text */
+    margin-left: 100px; /* Add space between the image and text */
   }
   
   /* "See More" button styling */
   #see-more-btn {
     position: absolute;
-    bottom: 80px; /* Move the button higher */
+    bottom: 10%; /* Move the button higher */
     left: 50%;
     transform: translateX(-50%);
     background-color: rgb(126, 78, 222);
@@ -126,7 +126,41 @@
 }
 
   /* Responsive Design */
-  @media (max-width: 768px) {
+  @media (max-width: 1400px) {
+  /* First section */
+    .titlesection {
+      display: flex;
+      justify-content: space-between; /* Keep the items spaced out */
+      align-items: center;
+      height: 100vh; /* Full-screen height */
+      padding: 0 10%; /* Add padding to left and right */
+      position: relative; /* Needed for button positioning */
+    }
+    
+    .title_header {
+      font-size: 3rem;
+      color: rgb(126, 78, 222);
+      /* margin-bottom: 10px; /* Adjusted space below title header */
+    }
+    
+    .title_text {
+      /* margin-top: 10px; */
+      color: #1a1a1a;
+      font-size: 1.2rem;
+      text-align: left; /* Align text to the left */
+    }
+    
+    /* Updated margin for the image */
+    .title_item img {
+      width: 400px;
+      border-radius: 30%;
+      display: block;
+      position: relative;
+      z-index: 1;
+      margin-left: 100px; /* Add space between the image and text */
+    }
+  }
+  @media (max-width: 850px) {
     .titlesection {
       flex-direction: column; /* Change to column layout on smaller screens */
       align-items: center; /* Center align all items */
@@ -136,14 +170,43 @@
     .title_item img {
       width: 300px; /* Reduce image size on smaller screens */
       margin-left: 0; /* Remove left margin to center the image below the text */
-      margin-top: 20px; /* Add margin above the image */
+      /*margin-top: 10px; /* Add margin above the image */
+      position: relative;
     }
   
     #see-more-btn {
         position: relative; /* Change to relative positioning */
-        bottom: auto; /* Remove fixed position adjustments */
+        bottom: 10%; /* Remove fixed position adjustments */
         margin-top: 20px; /* Add space above the button */
       }
+  }
+
+  /* For smartphones*/
+  @media (max-width: 500px) {
+    .title_header {
+    font-size: 2rem;
+    color: rgb(126, 78, 222);
+    /* margin-bottom: 10px; /* Adjusted space below title header */
+    }
+      .title_text {
+    margin-bottom: 10%;
+    color: #1a1a1a;
+    font-size: 1rem;
+    text-align: left; /* Align text to the left */
+    }
+  
+    .title_item img {
+      width: 200px; /* Reduce image size on smaller screens */
+      margin-left: 0; /* Remove left margin to center the image below the text */
+      margin-bottom: 10%; /* Add margin above the image */
+    }
+  
+    #see-more-btn {
+      display : none;
+      }
+    .navbar ul li a {
+      display : none;
+    }
   }
     
 
