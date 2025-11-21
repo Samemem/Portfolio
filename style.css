@@ -418,6 +418,22 @@
   }
 }
 
+#contact a {
+  color: #6c5ce7;     /* link color */
+  text-decoration: none; /* remove underline */
+  font-weight: bold;
+}
+
+#contact p {
+  font-size: 1.2rem;
+}
+
+#contact a:hover {
+  color: #a29bfe;       /* hover color */
+  text-decoration: underline;
+}
+
+
   /* Footer */
   footer {
     background-color: #333;
