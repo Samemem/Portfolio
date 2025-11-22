@@ -7,7 +7,7 @@
   }
   
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
@@ -28,6 +28,7 @@
   }
   
   .navbar ul {
+    flex-wrap: nowrap;        /* force one line */
     list-style: none;
     display: flex;
     margin: 0;
@@ -78,18 +79,21 @@
     height: 100vh; /* Full-screen height */
     padding: 0 10%; /* Add padding to left and right */
     position: relative; /* Needed for button positioning */
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center;
   }
   
   .title_header {
     font-size: 3rem;
-    color: rgb(126, 78, 222);
+    color: #1a1a1a;
     /* margin-bottom: 10px; /* Adjusted space below title header */
   }
   
   .title_text {
     /* margin-top: 10px; */
     color: #1a1a1a;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align: left; /* Align text to the left */
   }
   
@@ -101,6 +105,13 @@
     position: relative;
     z-index: 1;
     margin-left: 100px; /* Add space between the image and text */
+    clip-path: polygon(
+    25% 6.7%, 75% 6.7%,
+    100% 50%,
+    75% 93.3%, 25% 93.3%,
+    0% 50%
+  );
+
   }
   
   /* "See More" button styling */
@@ -109,7 +120,7 @@
     bottom: 10%; /* Move the button higher */
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgb(126, 78, 222);
+    background-color: #333;
     color: #fff;
     padding: 12px 24px;
     font-size: 1rem;
@@ -121,7 +132,7 @@
   
 /* Hover effect for the button */
 #see-more-btn:hover {
-  background-color: #333; /* Change background color on hover */
+  background-color: #161616; /* Change background color on hover */
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow */
 }
 
@@ -139,7 +150,6 @@
     
     .title_header {
       font-size: 3rem;
-      color: rgb(126, 78, 222);
       /* margin-bottom: 10px; /* Adjusted space below title header */
     }
     
@@ -181,24 +191,41 @@
       }
   }
 
+    /* Don't show navabr for smaller screens*/
+  @media (max-width: 650px) {
+    .navbar ul li a {
+      display : none;
+    }
+  }
+
   /* For smartphones*/
   @media (max-width: 500px) {
+    
+  .title_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* Spread text at top, image in middle */
+    height: 100vh;                   /* Allow vertical centering */
+    padding: 10px 0;
+  }
+
     .title_header {
     font-size: 2rem;
-    color: rgb(126, 78, 222);
+
     /* margin-bottom: 10px; /* Adjusted space below title header */
     }
       .title_text {
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     color: #1a1a1a;
     font-size: 1rem;
     text-align: left; /* Align text to the left */
     }
   
     .title_item img {
+      align-self: center;
+      margin-top: auto;   /* Push the image into the middle */
+      margin-bottom: auto;
       width: 200px; /* Reduce image size on smaller screens */
-      margin-left: 0; /* Remove left margin to center the image below the text */
-      margin-bottom: 10%; /* Add margin above the image */
     }
   
     #see-more-btn {
@@ -219,12 +246,14 @@
     padding: 50px 10%;
   }
   
-/* Timeline Container */
+
+/* Timeline container*/
 .timeline {
     position: relative;
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
+
   }
   
   /* Vertical line in the center */
@@ -434,21 +463,21 @@
 }
 
 
-  /* Footer */
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-  }
-  
-  footer p {
-    margin-bottom: 10px;
-  }
-  
-  footer a {
-    color: rgb(148, 55, 234);
-    text-decoration: none;
-  }
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: rgb(148, 55, 234);
+  text-decoration: none;
+}
   
