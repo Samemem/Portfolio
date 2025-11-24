@@ -223,8 +223,6 @@
   
     .title_item img {
       align-self: center;
-      margin-top: auto;   /* Push the image into the middle */
-      margin-bottom: auto;
       width: 200px; /* Reduce image size on smaller screens */
     }
   
@@ -235,7 +233,12 @@
       display : none;
     }
   }
-    
+  
+   @media (max-height: 500px){
+      .title_item img {
+      display : none;
+    }
+   }
 
   /* Padding between sections */
   section {
