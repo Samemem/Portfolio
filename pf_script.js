@@ -7,6 +7,11 @@ for (let i = 1; i <= 15; i++) {
   hiddenDivs[i] = document.getElementById(`hidden${i}`);
 }
 
+function toggleMenu() {
+  const menu = document.getElementById('navMenu');
+  menu.classList.toggle('active');
+}
+
 // Add click event listeners for each button
 buttons.forEach((button, index) => {
   button.addEventListener("click", () => {
