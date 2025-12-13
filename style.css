@@ -87,9 +87,9 @@
     justify-content: space-between;
     padding: 10px 20px;
   }
-.titlesection {
-  margin-top:60px;
-}
+  .titlesection {
+    margin-top:60px;
+  }
   .menu-toggle {
     display: block;
   }
